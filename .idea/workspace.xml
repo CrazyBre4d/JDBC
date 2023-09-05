@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/OracleConnection.java" afterDir="false" />
+    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="First commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/OracleConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/OracleConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,11 +62,23 @@
       <updated>1693827363094</updated>
       <workItem from="1693827364298" duration="6261000" />
       <workItem from="1693895452489" duration="5755000" />
-      <workItem from="1693906856952" duration="1465000" />
+      <workItem from="1693906856952" duration="5107000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <created>1693914931746</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693914931746</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
 </project>
