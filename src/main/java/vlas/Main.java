@@ -14,6 +14,8 @@ callablestatement
  md5
  entity model
 
+ разделение по правам: админ может все, а пользователь ток добавлять удалять и просматривать
+
  connection pull
 
  property file ( настройки бд )
