@@ -1,5 +1,7 @@
 package vlas.repository;
 
+import vlas.entity.Roles;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -36,33 +38,7 @@ public abstract class AbstractRepository<T> {
 
 
 
-    public void create(T entity) {
-        String query = "INSERT INTO " + getTableName() + " " + generateInsertQuery();
-        System.out.println(query);
-        try (Connection conn = getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            mapEntityToPreparedStatement(stmt, entity);
-
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void delete(int id) {
-        String query = "DELETE FROM " + getTableName() + " WHERE id = ?";
-        try (Connection conn = getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setInt(1, id);
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     protected abstract String getTableName();
     protected abstract T mapResultSetToEntity(ResultSet rs) throws SQLException;
-    protected abstract void mapEntityToPreparedStatement(PreparedStatement stmt, T entity) throws SQLException;
-    protected abstract String generateInsertQuery();
 
 }
