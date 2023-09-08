@@ -8,34 +8,30 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class RoleRepository extends AbstractRepository<Roles> {
-
     @Override
     protected String getTableName() {
-        return "roles";
+        return "roless";
     }
 
     @Override
     protected Roles mapResultSetToEntity(ResultSet rs) throws SQLException {
         Roles role = new Roles();
-        role.setRoleId(rs.getLong("role_id"));
-        role.setRoleName(rs.getString("role_name"));
+        role.setRoleId(rs.getInt(1));
+        role.setRoleName(rs.getString(2));
         return role;
     }
 
     @Override
     protected void mapEntityToPreparedStatement(PreparedStatement stmt, Roles entity) throws SQLException {
-        stmt.setString(1, entity.getRoleName());
+        stmt.setString(entity.getRoleId(), entity.getRoleName());
     }
 
     @Override
     protected String generateInsertQuery() {
-        return "(role_name) VALUES (?)";
+        return "(role_id, role_name) VALUES (?)";
     }
 
-    @Override
-    protected String generateUpdateQuery() {
-        return "role_name = ?";
-    }
 
-    // Дополнительные методы, если нужно
+
+
 }

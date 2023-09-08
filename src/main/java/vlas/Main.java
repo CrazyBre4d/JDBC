@@ -1,6 +1,10 @@
 package vlas;
 
+import vlas.entity.Roles;
+import vlas.repository.RoleRepository;
+
 import java.sql.*;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -55,11 +59,38 @@ public class Main {
                 System.out.println("Выберите операцию: \n1 - Добавление сущности \n2 - Удаление сущности \3 ");
                 break;
             case 2:
-                st = conn.createStatement();
-                rs = st.executeQuery("SELECT * FROM ROLESS ");
-                while (rs.next()) {
-                    System.out.println(rs.getInt(1) + " " + rs.getString(2));
-                }
+
+
+                        // Создаем экземпляр репозитория для ролей
+                        RoleRepository roleRepository = new RoleRepository();
+
+                        // Создаем новую роль
+                        Roles newRole = new Roles();
+                        newRole.setRoleId(3);
+                        newRole.setRoleName("Loh");
+
+                // Создаем роль в базе данных
+                         roleRepository.create(newRole);
+
+                        System.out.println(roleRepository.getAll());
+
+
+
+                      /*  // Получаем роль по ID
+                        long roleIdToFind = 1; // Замените на существующий ID
+                        Roles foundRole = roleRepository.getById(roleIdToFind);
+                        if (foundRole != null) {
+                            System.out.println("Found Role: Role ID: " + foundRole.getRoleId() + ", Role Name: " + foundRole.getRoleName());
+                        } else {
+                            System.out.println("Role not found.");
+                        }
+*/
+
+                        // Удаляем роль
+                       /* long roleIdToDelete = 2; // Замените на существующий ID
+                        roleRepository.delete(roleIdToDelete);*/
+
+
 
                 break;
             case 3:

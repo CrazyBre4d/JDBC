@@ -1,14 +1,14 @@
 package vlas.entity;
 
 public class Roles {
-    private  long role_id;
+    private int role_id;
     private String role_name;
 
-    public long getRoleId() {
+    public int getRoleId() {
         return role_id;
     }
 
-    public void setRoleId(long role_id) {
+    public void setRoleId(int role_id) {
         this.role_id = role_id;
     }
 

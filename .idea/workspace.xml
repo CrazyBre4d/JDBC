@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="3rd Commit">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/RoleRepository.java" afterDir="false" />
+    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="OH MA GOD Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/OracleConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/AbstractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Product_type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Product_type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/AbstractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/AbstractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/RoleRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +72,7 @@
       <workItem from="1694088967852" duration="315000" />
       <workItem from="1694089927966" duration="3207000" />
       <workItem from="1694093682979" duration="4873000" />
-      <workItem from="1694153428482" duration="8189000" />
+      <workItem from="1694153428482" duration="13444000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1693914931746</created>
@@ -99,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694091473696</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="OH MA GOD Commit">
+      <created>1694161951676</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694161951676</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +112,7 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Second commit" />
     <MESSAGE value="3rd Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="3rd Commit" />
+    <MESSAGE value="OH MA GOD Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="OH MA GOD Commit" />
   </component>
 </project>
