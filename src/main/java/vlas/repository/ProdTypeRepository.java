@@ -9,9 +9,10 @@ import java.sql.SQLException;
 
 public class ProdTypeRepository extends AbstractRepository{
 
-
+    private static final String dbCommand1 = "INSERT INTO product_type (type_id, type_name) VALUES (%d ,'%s')";
+    private static final String dbCommand2 = "DELETE FROM %s WHERE type_id = %d";
     public void create(ProductType entity) {
-        String query = String.format("INSERT INTO product_type (type_id, type_name) VALUES (%d ,'%s')", entity.getTypeId(), entity.getTypeName());
+        String query = String.format(dbCommand1, entity.getTypeId(), entity.getTypeName());
         System.out.println(query);
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -21,8 +22,7 @@ public class ProdTypeRepository extends AbstractRepository{
         }
     }
     public void delete(int id) {
-        String query = String.format("DELETE FROM %s WHERE type_id = %d", getTableName(), id);
-        System.out.println(query);
+        String query = String.format(dbCommand2, getTableName(), id);
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.executeUpdate();

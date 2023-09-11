@@ -14,6 +14,7 @@ public abstract class AbstractRepository<T> {
     private static final String DB_URL = "jdbc:oracle:thin:@scomplat.scx:1521:komplat";
     private static final String DB_USER = "kabakov";
     private static final String DB_PASSWORD = "kabakov";
+    private static final String dbCommand = "SELECT * FROM %s";
 
 
     protected Connection getConnection() throws SQLException {
@@ -22,8 +23,9 @@ public abstract class AbstractRepository<T> {
 
     public List<T> getAll() {
         List<T> entities = new ArrayList<>();
-        String query = "SELECT * FROM " + getTableName();
+        String query = String.format(dbCommand, getTableName());
         try (Connection conn = getConnection();
+
              PreparedStatement stmt = conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {

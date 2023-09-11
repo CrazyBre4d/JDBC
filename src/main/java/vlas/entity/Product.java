@@ -5,12 +5,14 @@ public class Product {
     private String productName;
     private int productPrice;
     private String productDescription;
+    private int typeId;
 
-    public Product(int productId, String productName, int productPrice, String productDescription) {
+    public Product(int productId, String productName, int productPrice, String productDescription, int typeId) {
         this.productId = productId;
         this.productName = productName;
         this.productPrice = productPrice;
         this.productDescription = productDescription;
+        this.typeId = typeId;
     }
 
     public int getProductId() {
@@ -45,6 +47,14 @@ public class Product {
         this.productDescription = productDescription;
     }
 
+    public int getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(int typeId) {
+        this.typeId = typeId;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -52,6 +62,7 @@ public class Product {
                 ", productName='" + productName + '\'' +
                 ", productPrice=" + productPrice +
                 ", productDescription='" + productDescription + '\'' +
+                ", typeId=" + typeId +
                 '}';
     }
 }

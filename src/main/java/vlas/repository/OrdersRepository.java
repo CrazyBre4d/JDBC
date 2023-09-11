@@ -1,32 +1,31 @@
 package vlas.repository;
 
-import vlas.entity.Users;
+import vlas.entity.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UsersRepository extends AbstractRepository{
-    private static final String dbCommand1 = "INSERT INTO userss (user_id, f_name, l_name, role_id, loginn, passwordd) " +
-            "VALUES (%d ,'%s','%s', %d,'%s','%s')";
-    private static final String dbCommand2 = "DELETE FROM %s WHERE user_id = %d";
+public class OrdersRepository extends AbstractRepository{
 
-    public void create(Users entity) {
-        String query = String.format(dbCommand1, entity.getUserId(), entity.getFirstName(), entity.getLastName(),
-                entity.getRoleId(), entity.getLogin(), entity.getPassword());
+    private static final String dbCommand1 = "INSERT INTO orders (order_id, user_id, product_id, is_ordered," +
+            " purchase_date) VALUES (%d , %d, %d, %d, '%s')";
+    private static final String dbCommand2 = "DELETE FROM %s WHERE order_id = %d";
+    public void create(Orders entity) {
+        String query = String.format(dbCommand1, entity.getOrderId(), entity.getUserId(),
+                entity.getProductId(), entity.getIsOrdered(), entity.getPurchaseDate());
         System.out.println(query);
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
-
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
     public void delete(int id) {
         String query = String.format(dbCommand2, getTableName(), id);
+        System.out.println(query);
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.executeUpdate();
@@ -37,13 +36,13 @@ public class UsersRepository extends AbstractRepository{
 
     @Override
     protected String getTableName() {
-        return "userss";
+        return "orders";
     }
 
     @Override
-    protected Users mapResultSetToEntity(ResultSet rs) throws SQLException {
-        Users users = new Users(rs.getInt(1),rs.getString(2), rs.getString(3),
-                rs.getInt(4), rs.getString(5), rs.getString(6));
-        return users;
+    protected Orders mapResultSetToEntity(ResultSet rs) throws SQLException {
+        Orders orders = new Orders(rs.getInt(1),rs.getInt(2),rs.getInt(3),
+                rs.getInt(4), rs.getString(2));
+        return orders;
     }
 }

@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="OH MA GOD Commit" />
+    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="MEGA Commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/OrdersRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/services/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/validation/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/AbstractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/AbstractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/ProdTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ProdTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/UsersRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +79,7 @@
       <workItem from="1694089927966" duration="3207000" />
       <workItem from="1694093682979" duration="4873000" />
       <workItem from="1694153428482" duration="20493000" />
-      <workItem from="1694412984810" duration="589000" />
+      <workItem from="1694412984810" duration="8676000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1693914931746</created>
@@ -104,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694169004788</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="MEGA Commit">
+      <created>1694415521925</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694415521925</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +134,17 @@
     <MESSAGE value="Second commit" />
     <MESSAGE value="3rd Commit" />
     <MESSAGE value="OH MA GOD Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="OH MA GOD Commit" />
+    <MESSAGE value="MEGA Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="MEGA Commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

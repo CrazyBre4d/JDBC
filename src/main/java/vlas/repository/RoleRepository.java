@@ -9,14 +9,14 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class RoleRepository extends AbstractRepository<Roles> {
-
+    private static final String dbCommand1 = "INSERT INTO roless (role_id, role_name) VALUES (%d ,'%s')";
+    private static final String dbCommand2 = "DELETE FROM %s WHERE role_id = %d";
 
     public void create(Roles entity) {
-        String query = String.format("INSERT INTO ROLESS (role_id, role_name) VALUES (%d ,'%s')", entity.getRoleId(), entity.getRoleName());
+        String query = String.format(dbCommand1, entity.getRoleId(), entity.getRoleName());
         System.out.println(query);
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
-
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -24,8 +24,7 @@ public class RoleRepository extends AbstractRepository<Roles> {
     }
 
     public void delete(int id) {
-        String query = String.format("DELETE FROM %s WHERE role_id = %d", getTableName(), id);
-        System.out.println(query);
+        String query = String.format(dbCommand2, getTableName(), id);
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.executeUpdate();

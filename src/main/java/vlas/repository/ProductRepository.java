@@ -1,13 +1,38 @@
 package vlas.repository;
 
-import vlas.entity.Users;
+import vlas.entity.Product;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ProductRepository extends AbstractRepository{
+public class ProductRepository extends AbstractRepository {
+    private static final String dbCommand1 = "INSERT INTO product (product_id, product_name, product_price," +
+            "product_description, type_id) VALUES (%d ,'%s', %d,'%s', %d)";
+    private static final String dbCommand2 = "DELETE FROM %s WHERE product_id = %d";
 
+    public void create(Product entity) {
+        String query = String.format(dbCommand1, entity.getProductId(), entity.getProductName(), entity.getProductPrice(),
+                entity.getProductDescription(), entity.getTypeId());
+        System.out.println(query);
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void delete(int id) {
+        String query = String.format(dbCommand2, getTableName(), id);
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     @Override
@@ -17,8 +42,8 @@ public class ProductRepository extends AbstractRepository{
 
     @Override
     protected Product mapResultSetToEntity(ResultSet rs) throws SQLException {
-        Users users = new Users(rs.getInt(1),rs.getString(2), rs.getString(3),
-                rs.getInt(4), rs.getString(5), rs.getString(6));
-        return users;
+        Product product = new Product(rs.getInt(1), rs.getString(2), rs.getInt(3),
+                rs.getString(4), rs.getInt(5));
+        return product;
     }
 }
