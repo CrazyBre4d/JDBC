@@ -1,5 +1,7 @@
 package vlas.entity;
 
+import java.util.Objects;
+
 public class Users {
     private int userId;
     private String firstName;
@@ -7,6 +9,8 @@ public class Users {
     private int roleId;
     private String login;
     private String password;
+
+    public Users(){}
 
     public Users(int userId, String firstName, String lastName, int roleId, String login, String password) {
         this.userId = userId;
@@ -75,6 +79,19 @@ public class Users {
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Users users = (Users) o;
+        return userId == users.userId && roleId == users.roleId && Objects.equals(firstName, users.firstName) && Objects.equals(lastName, users.lastName) && Objects.equals(login, users.login) && Objects.equals(password, users.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, firstName, lastName, roleId, login, password);
     }
 }
 

@@ -2,6 +2,7 @@ package vlas.entity;
 
 import java.io.Serializable;
 import java.security.SecureRandom;
+import java.util.Objects;
 
 
 public class Orders implements Serializable {
@@ -11,6 +12,7 @@ public class Orders implements Serializable {
     private int isOrdered;
     private String purchaseDate;
 
+    private Orders(){}
     public Orders(int orderId, int userId, int productId, int isOrdered, String purchaseDate) {
         this.orderId = orderId;
         this.userId = userId;
@@ -68,6 +70,19 @@ public class Orders implements Serializable {
                 ", isOrdered=" + isOrdered +
                 ", purchaseDate='" + purchaseDate + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Orders orders = (Orders) o;
+        return orderId == orders.orderId && userId == orders.userId && productId == orders.productId && isOrdered == orders.isOrdered && Objects.equals(purchaseDate, orders.purchaseDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(orderId, userId, productId, isOrdered, purchaseDate);
     }
 }
 

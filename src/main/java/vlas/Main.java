@@ -1,9 +1,7 @@
 package vlas;
 
-import vlas.entity.*;
-import vlas.repository.*;
+import vlas.services.Menu;
 import java.sql.*;
-import java.util.Scanner;
 
 
 
@@ -19,8 +17,8 @@ Long type
 
 надо ли закрывать соединение?
 
- md5
- entity model
+ md5 +
+ entity model +
 
  разделение по правам: админ может все, а пользователь ток добавлять удалять и просматривать
 
@@ -37,8 +35,9 @@ View в базе данных
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        Menu menu = new Menu();
+        menu.start();
 
-
-        }
 
     }
+}
