@@ -1,43 +1,52 @@
 package vlas.entity;
 
 public class Users {
-    private int user_id;
-    private String  f_name;
-    private String l_name;
-    private int role_id;
+    private int userId;
+    private String firstName;
+    private String lastName;
+    private int roleId;
     private String login;
     private String password;
 
-    public int getUser_id() {
-        return user_id;
+    public Users(int userId, String firstName, String lastName, int roleId, String login, String password) {
+        this.userId = userId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.roleId = roleId;
+        this.login = login;
+        this.password = password;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public int getUserId() {
+        return userId;
     }
 
-    public String getF_name() {
-        return f_name;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public void setF_name(String f_name) {
-        this.f_name = f_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getL_name() {
-        return l_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setL_name(String l_name) {
-        this.l_name = l_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public int getRole_id() {
-        return role_id;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setRole_id(int role_id) {
-        this.role_id = role_id;
+    public int getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
     public String getLogin() {
@@ -59,12 +68,15 @@ public class Users {
     @Override
     public String toString() {
         return "Users{" +
-                "user_id=" + user_id +
-                ", f_name='" + f_name + '\'' +
-                ", l_name='" + l_name + '\'' +
-                ", role_id=" + role_id +
+                "userId=" + userId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", roleId=" + roleId +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
 }
+
+
+

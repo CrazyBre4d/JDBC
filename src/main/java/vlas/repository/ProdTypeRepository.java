@@ -11,7 +11,7 @@ public class ProdTypeRepository extends AbstractRepository{
 
 
     public void create(ProductType entity) {
-        String query = String.format("INSERT INTO ROLESS (role_id, role_name) VALUES (%d ,'%s')", entity.getTypeId(), entity.getTypeName());
+        String query = String.format("INSERT INTO product_type (type_id, type_name) VALUES (%d ,'%s')", entity.getTypeId(), entity.getTypeName());
         System.out.println(query);
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {

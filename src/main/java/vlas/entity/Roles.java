@@ -1,35 +1,37 @@
 package vlas.entity;
 
 public class Roles {
-    private int role_id;
-    private String role_name;
+    private int roleId;
+    private String roleName;
 
-    public Roles(int role_id, String role_name) {
-        this.role_id = role_id;
-        this.role_name = role_name;
+    public Roles(int roleId, String roleName) {
+        this.roleId = roleId;
+        this.roleName = roleName;
     }
 
     public int getRoleId() {
-        return role_id;
+        return roleId;
     }
 
-    public void setRoleId(int role_id) {
-        this.role_id = role_id;
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
     }
 
     public String getRoleName() {
-        return role_name;
+        return roleName;
     }
 
-    public void setRoleName(String role_name) {
-        this.role_name = role_name;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     @Override
     public String toString() {
         return "Roles{" +
-                "role_id=" + role_id +
-                ", role_name='" + role_name + '\'' +
+                "roleId=" + roleId +
+                ", roleName='" + roleName + '\'' +
                 '}';
     }
 }
+
+

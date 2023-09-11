@@ -3,62 +3,71 @@ package vlas.entity;
 import java.io.Serializable;
 import java.security.SecureRandom;
 
-//БЛЯ ПАМАГИТЕ НИХУЯ НЕ ПОНЯЛ
+
 public class Orders implements Serializable {
-    private int order_id;
-    private int user_id;
-    private int product_id;
-    private int is_ordered;
-    private String purchase_date;
+    private int orderId;
+    private int userId;
+    private int productId;
+    private int isOrdered;
+    private String purchaseDate;
 
-    public int getOrder_id() {
-        return order_id;
+    public Orders(int orderId, int userId, int productId, int isOrdered, String purchaseDate) {
+        this.orderId = orderId;
+        this.userId = userId;
+        this.productId = productId;
+        this.isOrdered = isOrdered;
+        this.purchaseDate = purchaseDate;
     }
 
-    public void setOrder_id(int order_id) {
-        this.order_id = order_id;
+    public int getOrderId() {
+        return orderId;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public int getUserId() {
+        return userId;
     }
 
-    public int getProduct_id() {
-        return product_id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
+    public int getProductId() {
+        return productId;
     }
 
-    public int getIs_ordered() {
-        return is_ordered;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public void setIs_ordered(int is_ordered) {
-        this.is_ordered = is_ordered;
+    public int getIsOrdered() {
+        return isOrdered;
     }
 
-    public String getPurchase_date() {
-        return purchase_date;
+    public void setIsOrdered(int isOrdered) {
+        this.isOrdered = isOrdered;
     }
 
-    public void setPurchase_date(String purchase_date) {
-        this.purchase_date = purchase_date;
+    public String getPurchaseDate() {
+        return purchaseDate;
+    }
+
+    public void setPurchaseDate(String purchaseDate) {
+        this.purchaseDate = purchaseDate;
     }
 
     @Override
     public String toString() {
         return "Orders{" +
-                "order_id=" + order_id +
-                ", user_id=" + user_id +
-                ", product_id=" + product_id +
-                ", is_ordered=" + is_ordered +
-                ", purchase_date='" + purchase_date + '\'' +
+                "orderId=" + orderId +
+                ", userId=" + userId +
+                ", productId=" + productId +
+                ", isOrdered=" + isOrdered +
+                ", purchaseDate='" + purchaseDate + '\'' +
                 '}';
     }
 }
+
