@@ -4,7 +4,7 @@ import vlas.services.Menu;
 import java.sql.*;
 
 /*
-Long type
+Long type +
 слоистая архитектура
  property file ( настройки бд ) +
 
