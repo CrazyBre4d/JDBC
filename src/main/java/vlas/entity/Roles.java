@@ -3,21 +3,21 @@ package vlas.entity;
 import java.util.Objects;
 
 public class Roles {
-    private int roleId;
+    private Long roleId;
     private String roleName;
 
     public Roles(){}
 
-    public Roles(int roleId, String roleName) {
+    public Roles(Long roleId, String roleName) {
         this.roleId = roleId;
         this.roleName = roleName;
     }
 
-    public int getRoleId() {
+    public Long getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(int roleId) {
+    public void setRoleId(Long roleId) {
         this.roleId = roleId;
     }
 

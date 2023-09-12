@@ -3,16 +3,16 @@ package vlas.entity;
 import java.util.Objects;
 
 public class Users {
-    private int userId;
+    private Long userId;
     private String firstName;
     private String lastName;
-    private int roleId;
+    private Long roleId;
     private String login;
     private String password;
 
     public Users(){}
 
-    public Users(int userId, String firstName, String lastName, int roleId, String login, String password) {
+    public Users(Long userId, String firstName, String lastName, Long roleId, String login, String password) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,11 +21,11 @@ public class Users {
         this.password = password;
     }
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -45,11 +45,11 @@ public class Users {
         this.lastName = lastName;
     }
 
-    public int getRoleId() {
+    public Long getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(int roleId) {
+    public void setRoleId(Long roleId) {
         this.roleId = roleId;
     }
 

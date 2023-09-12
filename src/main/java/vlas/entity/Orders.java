@@ -6,14 +6,14 @@ import java.util.Objects;
 
 
 public class Orders implements Serializable {
-    private int orderId;
-    private int userId;
-    private int productId;
+    private Long orderId;
+    private Long userId;
+    private Long productId;
     private int isOrdered;
     private String purchaseDate;
 
     private Orders(){}
-    public Orders(int orderId, int userId, int productId, int isOrdered, String purchaseDate) {
+    public Orders(Long orderId, Long userId, Long productId, int isOrdered, String purchaseDate) {
         this.orderId = orderId;
         this.userId = userId;
         this.productId = productId;
@@ -21,27 +21,27 @@ public class Orders implements Serializable {
         this.purchaseDate = purchaseDate;
     }
 
-    public int getOrderId() {
+    public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(int orderId) {
+    public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public int getProductId() {
+    public Long getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
 

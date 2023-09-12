@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="MEGA V3 Commit">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/services/BasicConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/services/ConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/services/HikariCP.java" afterDir="false" />
+    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="MEGA V4 Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vlas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/AbstractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/AbstractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/OrdersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/OrdersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/ProdTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ProdTypeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/UsersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/ViewRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ViewRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vlas/services/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/services/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +79,7 @@
       <workItem from="1694153428482" duration="20493000" />
       <workItem from="1694412984810" duration="9408000" />
       <workItem from="1694424568081" duration="15273000" />
-      <workItem from="1694499360640" duration="14589000" />
+      <workItem from="1694499360640" duration="16888000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1693914931746</created>
@@ -149,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694442063163</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="MEGA V4 Commit">
+      <created>1694518021417</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1694518021417</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +158,8 @@
     <MESSAGE value="MEGA Commit" />
     <MESSAGE value="MEGA V2 Commit" />
     <MESSAGE value="MEGA V3 Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="MEGA V3 Commit" />
+    <MESSAGE value="MEGA V4 Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="MEGA V4 Commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

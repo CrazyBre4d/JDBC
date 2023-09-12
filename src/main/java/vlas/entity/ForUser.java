@@ -3,10 +3,10 @@ package vlas.entity;
 public class ForUser {
    private String name;
    private String prodName;
-   private int price;
+   private Long price;
     public ForUser(){}
 
-    public ForUser(String name, String prodName, int price) {
+    public ForUser(String name, String prodName, Long price) {
         this.name = name;
         this.prodName = prodName;
         this.price = price;
@@ -28,11 +28,11 @@ public class ForUser {
         this.prodName = prodName;
     }
 
-    public int getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 

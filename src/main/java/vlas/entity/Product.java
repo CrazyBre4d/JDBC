@@ -3,15 +3,15 @@ package vlas.entity;
 import java.util.Objects;
 
 public class Product {
-    private int productId;
+    private Long productId;
     private String productName;
     private int productPrice;
     private String productDescription;
-    private int typeId;
+    private Long typeId;
 
     public Product(){}
 
-    public Product(int productId, String productName, int productPrice, String productDescription, int typeId) {
+    public Product(Long productId, String productName, int productPrice, String productDescription, Long typeId) {
         this.productId = productId;
         this.productName = productName;
         this.productPrice = productPrice;
@@ -19,11 +19,11 @@ public class Product {
         this.typeId = typeId;
     }
 
-    public int getProductId() {
+    public Long getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
 
@@ -51,11 +51,11 @@ public class Product {
         this.productDescription = productDescription;
     }
 
-    public int getTypeId() {
+    public Long getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(int typeId) {
+    public void setTypeId(Long typeId) {
         this.typeId = typeId;
     }
 

@@ -16,7 +16,7 @@ View в базе данных +
 В консольке с подключенной бд. Ну думаю, что пока что все*/
 
 public class Main {
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static void main(String[] args)  {
         Menu menu = new Menu();
         menu.start();
     }

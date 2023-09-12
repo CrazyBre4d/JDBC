@@ -10,6 +10,8 @@ import java.util.Scanner;
 
 public class Menu {
 
+    private static final String text = "1 - Добавить, 2 - Удалить";
+
     RoleRepository r = new RoleRepository();
     OrdersRepository o = new OrdersRepository();
     ProductRepository p = new ProductRepository();
@@ -26,7 +28,6 @@ public class Menu {
             int operator = sc.nextInt();
             switch (operator) {
                 case 1: {
-
                     System.out.println("Введите имя и пароль:");
                     sc.nextLine();
                     String user1 = sc.nextLine();
@@ -66,7 +67,7 @@ public class Menu {
     }
 
     private void next(int i) {
-        while (true) { // Бесконечный цикл
+        while (true) {
             switch (i) {
                 case 1:
                     forAdmin();
@@ -79,7 +80,7 @@ public class Menu {
     }
 
     private void forUser() {
-        while (true) { // Бесконечный цикл
+        while (true) {
             System.out.println("Добро пожаловать в базу данных ОАО 'В ГОСТЯХ У ВЛАС\n" +
                     "1 - Просмотр заказа\n2 - Назад");
             Scanner sc = new Scanner(System.in);
@@ -89,13 +90,13 @@ public class Menu {
                     v.getView("Vlas"); // FIX
                     break;
                 case 2:
-                    return; // Возврат к предыдущему меню
+                    return;
             }
         }
     }
 
     private void forAdmin() {
-        while (true) { // Бесконечный цикл
+        while (true) {
             System.out.println("Салам, Женя! \n Выберите таблицу или действие:\n" +
                     "1 - Users  \n2 - Roles \n3 - Product \n4 - Product_type \n5 - Orders \n6 - Назад");
             Scanner sc = new Scanner(System.in);
@@ -103,26 +104,36 @@ public class Menu {
             switch (i) {
                 case 1:
                     System.out.println(u.getAll());
-                    System.out.println("1 - Добавить, 2 - Удалить");
+                    System.out.println(text);
+                    i = sc.nextInt();
+                    switch (i) {
+                        case 1:
+                            System.out.println("sadasd");
+                        case 2:
+                    }
                     break;
                 case 2:
                     System.out.println(r.getAll());
+                    System.out.println(text);
                     break;
                 case 3:
                     System.out.println(p.getAll());
+                    System.out.println(text);
                     break;
                 case 4:
                     System.out.println(p1.getAll());
+                    System.out.println(text);
                     break;
                 case 5:
                     System.out.println(o.getAll());
+                    System.out.println(text);
                     break;
                 case 6:
-                    return; // Возврат к предыдущему меню
+                    return;
             }
         }
     }
-    public void crud(){
+    public  void crud(){
         while (true) {
             Scanner sc = new Scanner(System.in);
             int i = sc.nextInt();

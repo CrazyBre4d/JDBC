@@ -3,19 +3,19 @@ package vlas.entity;
 import java.util.Objects;
 
 public class ProductType {
-    private int typeId;
+    private Long typeId;
     private String typeName;
     public ProductType(){}
-    public ProductType(int typeId, String typeName) {
+    public ProductType(Long typeId, String typeName) {
         this.typeId = typeId;
         this.typeName = typeName;
     }
 
-    public int getTypeId() {
+    public Long getTypeId() {
         return typeId;
     }
 
-    public void setTypeId(int typeId) {
+    public void setTypeId(Long typeId) {
         this.typeId = typeId;
     }
 
