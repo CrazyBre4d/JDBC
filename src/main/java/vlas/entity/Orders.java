@@ -77,7 +77,7 @@ public class Orders implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Orders orders = (Orders) o;
-        return orderId == orders.orderId && userId == orders.userId && productId == orders.productId && isOrdered == orders.isOrdered && Objects.equals(purchaseDate, orders.purchaseDate);
+        return isOrdered == orders.isOrdered && Objects.equals(orderId, orders.orderId) && Objects.equals(userId, orders.userId) && Objects.equals(productId, orders.productId) && Objects.equals(purchaseDate, orders.purchaseDate);
     }
 
     @Override

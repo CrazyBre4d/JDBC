@@ -86,7 +86,7 @@ public class Users {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Users users = (Users) o;
-        return userId == users.userId && roleId == users.roleId && Objects.equals(firstName, users.firstName) && Objects.equals(lastName, users.lastName) && Objects.equals(login, users.login) && Objects.equals(password, users.password);
+        return Objects.equals(userId, users.userId) && Objects.equals(firstName, users.firstName) && Objects.equals(lastName, users.lastName) && Objects.equals(roleId, users.roleId) && Objects.equals(login, users.login) && Objects.equals(password, users.password);
     }
 
     @Override

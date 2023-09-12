@@ -1,5 +1,7 @@
 package vlas.entity;
 
+import java.util.Objects;
+
 public class ForUser {
    private String name;
    private String prodName;
@@ -34,6 +36,19 @@ public class ForUser {
 
     public void setPrice(Long price) {
         this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ForUser forUser = (ForUser) o;
+        return Objects.equals(name, forUser.name) && Objects.equals(prodName, forUser.prodName) && Objects.equals(price, forUser.price);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, prodName, price);
     }
 
     @Override

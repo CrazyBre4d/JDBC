@@ -56,7 +56,7 @@ public class Menu {
                     String user = sc.nextLine();
                     System.out.println("Введите пароль");
                     String password = sc.nextLine();
-                    u.create(new Users(id, firstName, lastName, 2, user, Validator.getMD5Hash(password)));
+                    u.create(new Users((long) id, firstName, lastName, 2L, user, Validator.getMD5Hash(password)));
                     break;
                 }
                 default:

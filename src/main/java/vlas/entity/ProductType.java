@@ -40,7 +40,7 @@ public class ProductType {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProductType that = (ProductType) o;
-        return typeId == that.typeId && Objects.equals(typeName, that.typeName);
+        return Objects.equals(typeId, that.typeId) && Objects.equals(typeName, that.typeName);
     }
 
     @Override
