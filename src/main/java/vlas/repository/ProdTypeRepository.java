@@ -39,7 +39,7 @@ public class ProdTypeRepository extends AbstractRepository{
 
     @Override
     protected ProductType mapResultSetToEntity(ResultSet rs) throws SQLException {
-        ProductType prodType = new ProductType(rs.getInt(1),rs.getString(2));
+        ProductType prodType = new ProductType(rs.getLong(1),rs.getString(2));
         return prodType;
     }
 }

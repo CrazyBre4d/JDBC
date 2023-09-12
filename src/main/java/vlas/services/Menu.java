@@ -1,6 +1,5 @@
 package vlas.services;
 
-import vlas.*;
 import vlas.entity.*;
 import vlas.repository.*;
 import vlas.validation.Validator;
@@ -12,12 +11,12 @@ public class Menu {
 
     private static final String text = "1 - Добавить, 2 - Удалить";
 
-    RoleRepository r = new RoleRepository();
-    OrdersRepository o = new OrdersRepository();
-    ProductRepository p = new ProductRepository();
-    ProdTypeRepository p1 = new ProdTypeRepository();
-    UsersRepository u = new UsersRepository();
-    ViewRepo v = new ViewRepo();
+    RoleRepository roleR = new RoleRepository();
+    OrdersRepository ordersR = new OrdersRepository();
+    ProductRepository productR = new ProductRepository();
+    ProdTypeRepository prodTypeR = new ProdTypeRepository();
+    UsersRepository usersR = new UsersRepository();
+    ViewRepo viewR = new ViewRepo();
 
 
     public void start() {
@@ -35,9 +34,9 @@ public class Menu {
                     String password1 = sc.nextLine();
                     sc.nextLine();
 
-                    if (Validator.getMD5Hash(password1).equals(u.getPasswordFromDB(user1))) {
+                    if (Validator.getMD5Hash(password1).equals(usersR.getPasswordFromDB(user1))) {
                         System.out.println("входи");
-                        int a = u.getRoleFromDB(user1);
+                        int a = usersR.getRoleFromDB(user1);
                         next(a);
                     } else {
                         throw new NoSuchElementException();
@@ -56,7 +55,7 @@ public class Menu {
                     String user = sc.nextLine();
                     System.out.println("Введите пароль");
                     String password = sc.nextLine();
-                    u.create(new Users((long) id, firstName, lastName, 2L, user, Validator.getMD5Hash(password)));
+                    usersR.create(new Users((long) id, firstName, lastName, 2L, user, Validator.getMD5Hash(password)));
                     break;
                 }
                 default:
@@ -87,7 +86,7 @@ public class Menu {
             int i = sc.nextInt();
             switch (i) {
                 case 1:
-                    v.getView("Vlas"); // FIX
+                    viewR.getView("Vlas"); // FIX
                     break;
                 case 2:
                     return;
@@ -103,7 +102,7 @@ public class Menu {
             int i = sc.nextInt();
             switch (i) {
                 case 1:
-                    System.out.println(u.getAll());
+                    System.out.println(usersR.getAll());
                     System.out.println(text);
                     i = sc.nextInt();
                     switch (i) {
@@ -113,19 +112,19 @@ public class Menu {
                     }
                     break;
                 case 2:
-                    System.out.println(r.getAll());
+                    System.out.println(roleR.getAll());
                     System.out.println(text);
                     break;
                 case 3:
-                    System.out.println(p.getAll());
+                    System.out.println(productR.getAll());
                     System.out.println(text);
                     break;
                 case 4:
-                    System.out.println(p1.getAll());
+                    System.out.println(prodTypeR.getAll());
                     System.out.println(text);
                     break;
                 case 5:
-                    System.out.println(o.getAll());
+                    System.out.println(ordersR.getAll());
                     System.out.println(text);
                     break;
                 case 6:

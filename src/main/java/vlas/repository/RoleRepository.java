@@ -40,7 +40,7 @@ public class RoleRepository extends AbstractRepository<Roles> {
 
     @Override
     protected Roles mapResultSetToEntity(ResultSet rs) throws SQLException {
-        Roles role = new Roles(rs.getInt(1),rs.getString(2));
+        Roles role = new Roles(rs.getLong(1),rs.getString(2));
         return role;
     }
 

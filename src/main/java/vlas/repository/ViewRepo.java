@@ -32,7 +32,7 @@ public class ViewRepo extends AbstractRepository {
     @Override
     protected ForUser mapResultSetToEntity(ResultSet rs) throws SQLException {
         ForUser forUser = new ForUser(rs.getString(1), rs.getString(2),
-               rs.getInt(3));
+              rs.getLong(3));
         return forUser;
     }
 }

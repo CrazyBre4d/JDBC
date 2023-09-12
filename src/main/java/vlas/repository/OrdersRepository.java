@@ -42,7 +42,7 @@ public class OrdersRepository extends AbstractRepository{
 
     @Override
     protected Orders mapResultSetToEntity(ResultSet rs) throws SQLException {
-        Orders orders = new Orders(rs.getInt(1),rs.getInt(2),rs.getInt(3),
+        Orders orders = new Orders(rs.getLong(1),rs.getLong(2),rs.getLong(3),
                 rs.getInt(4), rs.getString(2));
         return orders;
     }

@@ -80,8 +80,8 @@ public class UsersRepository extends AbstractRepository {
 
     @Override
     protected Users mapResultSetToEntity(ResultSet rs) throws SQLException {
-        Users users = new Users(rs.getInt(1), rs.getString(2), rs.getString(3),
-                rs.getInt(4), rs.getString(5), rs.getString(6));
+        Users users = new Users(rs.getLong(1), rs.getString(2), rs.getString(3),
+                rs.getLong(4), rs.getString(5), rs.getString(6));
         return users;
     }
 
