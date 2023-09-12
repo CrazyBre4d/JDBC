@@ -1,6 +1,7 @@
 package vlas.repository;
 
 import vlas.entity.Users;
+import vlas.services.HikariCP;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,13 +12,13 @@ public class UsersRepository extends AbstractRepository {
     private static final String dbCommand1 = "INSERT INTO userss (user_id, f_name, l_name, role_id, loginn, passwordd) " +
             "VALUES (%d ,'%s','%s', %d,'%s','%s')";
     private static final String dbCommand2 = "DELETE FROM %s WHERE user_id = %d";
-    private static final String dbCommand3 = "SELECT * FROM userss WHERE loginn = '%s' ";
+    private static final String dbCommand3 = "SELECT * FROM userss WHERE loginn = '%s'";
 
     public void create(Users entity) {
         String query = String.format(dbCommand1, entity.getUserId(), entity.getFirstName(), entity.getLastName(),
                 entity.getRoleId(), entity.getLogin(), entity.getPassword());
         System.out.println(query);
-        try (Connection conn = getConnection();
+        try (Connection conn = HikariCP.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.executeUpdate();
@@ -28,7 +29,7 @@ public class UsersRepository extends AbstractRepository {
 
     public void delete(int id) {
         String query = String.format(dbCommand2, getTableName(), id);
-        try (Connection conn = getConnection();
+        try (Connection conn = HikariCP.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -38,8 +39,8 @@ public class UsersRepository extends AbstractRepository {
 
     public String getPasswordFromDB(String username) {
         String password = null;
-        String query =String.format("SELECT * FROM userss WHERE loginn = '%s'",username) ;
-        try (Connection conn = getConnection();
+        String query =String.format(dbCommand3,username) ;
+        try (Connection conn = HikariCP.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
@@ -55,7 +56,7 @@ public class UsersRepository extends AbstractRepository {
     public int getRoleFromDB(String username) {
         int id = 0;
         String query =String.format("SELECT * FROM userss WHERE loginn = '%s'",username) ;
-        try (Connection conn = getConnection();
+        try (Connection conn = HikariCP.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {

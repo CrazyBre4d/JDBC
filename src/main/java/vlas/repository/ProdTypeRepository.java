@@ -1,6 +1,7 @@
 package vlas.repository;
 
 import vlas.entity.ProductType;
+import vlas.services.HikariCP;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +15,7 @@ public class ProdTypeRepository extends AbstractRepository{
     public void create(ProductType entity) {
         String query = String.format(dbCommand1, entity.getTypeId(), entity.getTypeName());
         System.out.println(query);
-        try (Connection conn = getConnection();
+        try (Connection conn = HikariCP.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
              stmt.executeUpdate();
         } catch (SQLException e) {
@@ -23,7 +24,7 @@ public class ProdTypeRepository extends AbstractRepository{
     }
     public void delete(int id) {
         String query = String.format(dbCommand2, getTableName(), id);
-        try (Connection conn = getConnection();
+        try (Connection conn = HikariCP.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.executeUpdate();
         } catch (SQLException e) {

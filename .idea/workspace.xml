@@ -4,20 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="MEGA V2 Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/ForUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ViewRepo.java" afterDir="false" />
+    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="MEGA V3 Commit">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/services/BasicConnectionPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/services/ConnectionPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/services/HikariCP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vlas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/ProductType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/ProductType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/AbstractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/AbstractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/OrdersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/OrdersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/ProdTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ProdTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/RoleRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/UsersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/ViewRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ViewRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vlas/services/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/services/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/validation/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/validation/Validator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +51,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/kabakou-u/Desktop/JAVA_PROJECTS/CALCULATOR",
+    "last_opened_file_path": "C:/Users/kabakou-u/Desktop/JAVA_PROJECTS/slf4j-simple-2.0.7.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -66,6 +68,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kabakou-u\Desktop\JAVA_PROJECTS\JDBC\src\main\resources" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -83,7 +90,8 @@
       <workItem from="1694093682979" duration="4873000" />
       <workItem from="1694153428482" duration="20493000" />
       <workItem from="1694412984810" duration="9408000" />
-      <workItem from="1694424568081" duration="14302000" />
+      <workItem from="1694424568081" duration="15273000" />
+      <workItem from="1694499360640" duration="14589000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1693914931746</created>
@@ -134,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694424519335</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="MEGA V3 Commit">
+      <created>1694442063163</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1694442063163</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +162,8 @@
     <MESSAGE value="OH MA GOD Commit" />
     <MESSAGE value="MEGA Commit" />
     <MESSAGE value="MEGA V2 Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="MEGA V2 Commit" />
+    <MESSAGE value="MEGA V3 Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="MEGA V3 Commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
