@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="minifix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="minifix v2">
       <change beforePath="$PROJECT_DIR$/src/main/java/vlas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/OrdersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/OrdersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/UsersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/services/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/services/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +78,7 @@
       <workItem from="1694412984810" duration="9408000" />
       <workItem from="1694424568081" duration="15273000" />
       <workItem from="1694499360640" duration="20947000" />
-      <workItem from="1694585906740" duration="6575000" />
+      <workItem from="1694585906740" duration="7254000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1693914931746</created>
@@ -184,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694586479210</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="minifix v2">
+      <created>1694592547451</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1694592547451</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +205,8 @@
     <MESSAGE value="changed getInt to getLong methods" />
     <MESSAGE value="config parser added" />
     <MESSAGE value="minifix" />
-    <option name="LAST_COMMIT_MESSAGE" value="minifix" />
+    <MESSAGE value="minifix v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="minifix v2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
