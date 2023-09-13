@@ -2,6 +2,7 @@ package vlas.entity;
 
 import java.io.Serializable;
 import java.security.SecureRandom;
+import java.util.Date;
 import java.util.Objects;
 
 
@@ -10,10 +11,10 @@ public class Orders implements Serializable {
     private Long userId;
     private Long productId;
     private int isOrdered;
-    private String purchaseDate;
+    private Date purchaseDate;
 
     private Orders(){}
-    public Orders(Long orderId, Long userId, Long productId, int isOrdered, String purchaseDate) {
+    public Orders(Long orderId, Long userId, Long productId, int isOrdered, Date purchaseDate) {
         this.orderId = orderId;
         this.userId = userId;
         this.productId = productId;
@@ -53,11 +54,11 @@ public class Orders implements Serializable {
         this.isOrdered = isOrdered;
     }
 
-    public String getPurchaseDate() {
+    public Date getPurchaseDate() {
         return purchaseDate;
     }
 
-    public void setPurchaseDate(String purchaseDate) {
+    public void setPurchaseDate(Date purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 

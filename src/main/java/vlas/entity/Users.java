@@ -71,14 +71,8 @@ public class Users {
 
     @Override
     public String toString() {
-        return "Users{" +
-                "userId=" + userId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", roleId=" + roleId +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return "Users:   | User_id  |   F_Name   |    L_Name   |    Role_Id |  Login    |      Password\n" +
+                "             " +"  " + userId+"           " +firstName+ "        "+ lastName + "        " + roleId+"         "+login+"         "+password +"\n";
     }
 
     @Override

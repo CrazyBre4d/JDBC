@@ -13,6 +13,7 @@ public class UsersRepository extends AbstractRepository {
             "VALUES (%d ,'%s','%s', %d,'%s','%s')";
     private static final String dbCommand2 = "DELETE FROM %s WHERE user_id = %d";
     private static final String dbCommand3 = "SELECT * FROM userss WHERE loginn = '%s'";
+    private static final String dbCommand4 = "SELECT * FROM userss WHERE passwordd = '%s'";
 
     public void create(Users entity) {
         String query = String.format(dbCommand1, entity.getUserId(), entity.getFirstName(), entity.getLastName(),
@@ -52,6 +53,22 @@ public class UsersRepository extends AbstractRepository {
             e.printStackTrace();
         }
         return password;
+    }
+    public String getUserFromDB(String password1) {
+        String user = null;
+        String query =String.format(dbCommand4,password1) ;
+        try (Connection conn = HikariCP.getDataSource().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    user = rs.getString(5);
+
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
     }
     public int getRoleFromDB(String username) {
         int id = 0;

@@ -4,12 +4,15 @@ import vlas.entity.*;
 import vlas.repository.*;
 import vlas.validation.Validator;
 
+import java.sql.Date;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Menu {
-
-    private static final String text = "1 - Добавить, 2 - Удалить";
+   private String user1;
+   private String password1;
+   private Long roleUser = 2L;
+   private static final String text = "1 - Добавить, 2 - Удалить, 3 - Назад";
 
     RoleRepository roleR = new RoleRepository();
     OrdersRepository ordersR = new OrdersRepository();
@@ -29,9 +32,9 @@ public class Menu {
                 case 1: {
                     System.out.println("Введите имя и пароль:");
                     sc.nextLine();
-                    String user1 = sc.nextLine();
+                    user1 = sc.nextLine();
 
-                    String password1 = sc.nextLine();
+                    password1 = sc.nextLine();
                     sc.nextLine();
 
                     if (Validator.getMD5Hash(password1).equals(usersR.getPasswordFromDB(user1))) {
@@ -55,7 +58,7 @@ public class Menu {
                     String user = sc.nextLine();
                     System.out.println("Введите пароль");
                     String password = sc.nextLine();
-                    usersR.create(new Users((long) id, firstName, lastName, 2L, user, Validator.getMD5Hash(password)));
+                    usersR.create(new Users((long) id, firstName, lastName, roleUser, user, Validator.getMD5Hash(password)));
                     break;
                 }
                 default:
@@ -86,10 +89,10 @@ public class Menu {
             int i = sc.nextInt();
             switch (i) {
                 case 1:
-                    viewR.getView("Vlas"); // FIX
+                    viewR.getView(usersR.getUserFromDB(password1)); // FIX
                     break;
                 case 2:
-                    return;
+                     start();
             }
         }
     }
@@ -107,38 +110,115 @@ public class Menu {
                     i = sc.nextInt();
                     switch (i) {
                         case 1:
-                            System.out.println("sadasd");
+                            System.out.println("Введите id, f_name, l_name, role_id, login, password");
+                            int id = sc.nextInt();
+                            sc.nextLine();
+                            String firstName = sc.nextLine();
+                            String lastName = sc.nextLine();
+                            Long role = sc.nextLong();
+                            String user = sc.nextLine();
+                            String password = sc.nextLine();
+
+                            usersR.create(new Users((long) id, firstName, lastName, role, user, Validator.getMD5Hash(password)));
+                            break;
                         case 2:
+                            System.out.println("Введите id который надо удалить");
+                            int d = sc.nextInt();
+                            usersR.delete(d);
+                            break;
+                        case 3:  return;
                     }
                     break;
                 case 2:
                     System.out.println(roleR.getAll());
                     System.out.println(text);
+                    i = sc.nextInt();
+                    switch (i) {
+                        case 1:
+                            System.out.println("Введите id, role_name");
+                            int id = sc.nextInt();
+                            sc.nextLine();
+                            String roleName = sc.nextLine();
+
+                            roleR.create(new Roles((long) id, roleName));
+                            break;
+                        case 2:
+                            System.out.println("Введите id который надо удалить");
+                            int d = sc.nextInt();
+                            roleR.delete(d);
+                            break;
+                        case 3:  return;
+                    }
                     break;
                 case 3:
                     System.out.println(productR.getAll());
                     System.out.println(text);
+                    i = sc.nextInt();
+                    switch (i) {
+                        case 1:
+                            System.out.println("Введите id, product_name, product_price, product_desc, type_id");
+                            int id = sc.nextInt();
+                            sc.nextLine();
+                            String prodName = sc.nextLine();
+                            String prodDesc = sc.nextLine();
+                            int prodPrice = sc.nextInt();
+                            Long typeId = sc.nextLong();
+                            productR.create(new Product((long) id, prodName, prodPrice, prodDesc, typeId ));
+                            break;
+                        case 2:
+                            System.out.println("Введите id который надо удалить");
+                            int d = sc.nextInt();
+                            productR.delete(d);
+                            break;
+                        case 3:  return;
+                    }
                     break;
                 case 4:
                     System.out.println(prodTypeR.getAll());
                     System.out.println(text);
+                    i = sc.nextInt();
+                    switch (i) {
+                        case 1:
+                            System.out.println("Введите id, type_name");
+                            int id = sc.nextInt();
+                            sc.nextLine();
+                            String typeName = sc.nextLine();
+                            prodTypeR.create(new ProductType((long) id, typeName));
+                            break;
+                        case 2:
+                            System.out.println("Введите id который надо удалить");
+                            int d = sc.nextInt();
+                            prodTypeR.delete(d);
+                            break;
+                        case 3:  return;
+                    }
                     break;
                 case 5:
                     System.out.println(ordersR.getAll());
                     System.out.println(text);
+                    i = sc.nextInt();
+                    switch (i) {
+                        case 1:
+                            System.out.println("Введите id, user_id, product_id, is_Ordered, purchase_date");
+                            int id = sc.nextInt();
+                            sc.nextLine();
+                            Long userId = sc.nextLong();
+                            Long prodId = sc.nextLong();
+                            int isOrdered = sc.nextInt();
+                            sc.nextLine();
+                            Date date = Date.valueOf(sc.nextLine());
+                           ordersR.create(new Orders((long) id, userId,  prodId, isOrdered, date));
+                            break;
+                        case 2:
+                            System.out.println("Введите id который надо удалить");
+                            int d = sc.nextInt();
+                            ordersR.delete(d);
+                            break;
+                        case 3:  return;
+                    }
                     break;
                 case 6:
-                    return;
-            }
-        }
-    }
-    public  void crud(){
-        while (true) {
-            Scanner sc = new Scanner(System.in);
-            int i = sc.nextInt();
-            switch (i) {
-                case 1:
-                case 2:
+                    start();
             }
         }
     }

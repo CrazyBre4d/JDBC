@@ -1,7 +1,6 @@
 package vlas;
 
 import vlas.services.Menu;
-import java.sql.*;
 
 /*
 Long type +
@@ -15,6 +14,8 @@ View в базе данных +
 С авторизацией и регистрацией на JAva +
 В консольке с подключенной бд. Ну думаю, что пока что все*/
 
+
+// меню для пользователя, получение пользователя
 public class Main {
     public static void main(String[] args)  {
         Menu menu = new Menu();
