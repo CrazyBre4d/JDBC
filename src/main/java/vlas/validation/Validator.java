@@ -1,11 +1,9 @@
 package vlas.validation;
 
-
 import javax.xml.bind.DatatypeConverter;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Scanner;
 
 public class Validator {
 
@@ -21,18 +19,6 @@ public class Validator {
             }
         }
 
-
-   /* public static boolean validatePassword(String username, String enteredPassword) {
-        String dbPassword = getPasswordFromDatabase(username);
-        if (dbPassword != null) {
-            // Хеширование введенного пароля (это должно быть вашей логикой хеширования)
-            String hashedEnteredPassword = hashPassword(enteredPassword);
-
-            // Сравниваем хешированный введенный пароль с хешем из базы данных
-            return hashedEnteredPassword.equals(dbPassword);
-        }
-        return false; // Пользователь не найден в базе данных
-    }*/
     }
 
 

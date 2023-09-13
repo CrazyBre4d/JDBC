@@ -70,9 +70,5 @@ public class BasicConnectionPool implements ConnectionPool {
     public String getPassword() {
         return password;
     }
-
-
-
-    // standard getters
 }
 

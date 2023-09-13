@@ -13,7 +13,7 @@ public class ConfigParser {
             properties.load(fileInputStream);
         } catch (IOException e) {
             e.printStackTrace();
-            // Обработка ошибки
+
         }
     }
 
@@ -33,5 +33,5 @@ public class ConfigParser {
         return Double.parseDouble(properties.getProperty(key));
     }
 
-    // Другие методы, если нужно
+
 }

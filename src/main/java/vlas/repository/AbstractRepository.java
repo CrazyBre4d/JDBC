@@ -31,7 +31,6 @@ public abstract class AbstractRepository<T> {
     }
 
 
-
     protected abstract String getTableName();
     protected abstract T mapResultSetToEntity(ResultSet rs) throws SQLException;
 
