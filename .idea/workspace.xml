@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="minifix v2">
+    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="minifix v2.0.1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vlas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +79,7 @@
       <workItem from="1694412984810" duration="9408000" />
       <workItem from="1694424568081" duration="15273000" />
       <workItem from="1694499360640" duration="20947000" />
-      <workItem from="1694585906740" duration="7254000" />
+      <workItem from="1694585906740" duration="8518000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1693914931746</created>
@@ -185,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694592547451</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="minifix v2.0.1">
+      <created>1694594226785</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1694594226785</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +214,8 @@
     <MESSAGE value="config parser added" />
     <MESSAGE value="minifix" />
     <MESSAGE value="minifix v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="minifix v2" />
+    <MESSAGE value="minifix v2.0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="minifix v2.0.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
