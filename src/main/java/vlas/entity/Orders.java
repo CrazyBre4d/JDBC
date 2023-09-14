@@ -21,6 +21,12 @@ public class Orders implements Serializable {
         this.isOrdered = isOrdered;
         this.purchaseDate = purchaseDate;
     }
+    public Orders( Long userId, Long productId, int isOrdered, Date purchaseDate) {
+        this.userId = userId;
+        this.productId = productId;
+        this.isOrdered = isOrdered;
+        this.purchaseDate = purchaseDate;
+    }
 
     public Long getOrderId() {
         return orderId;

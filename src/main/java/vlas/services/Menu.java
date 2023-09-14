@@ -130,9 +130,7 @@ public class Menu {
                     i = sc.nextInt();
                     switch (i) {
                         case 1:
-                            System.out.println("Введите id, f_name, l_name, role_id, login, password");
-                            int id = sc.nextInt();
-                            sc.nextLine();
+                            System.out.println("Введите  f_name, l_name, role_id, login, password");
                             String firstName = sc.nextLine();
                             String lastName = sc.nextLine();
                             Long role = sc.nextLong();
@@ -140,7 +138,7 @@ public class Menu {
                             String user = sc.nextLine();
                             String password = sc.nextLine();
 
-                            usersR.create(new Users((long) id, firstName, lastName, role, user, Validator.getMD5Hash(password)));
+                            usersR.create(new Users( firstName, lastName, role, user, Validator.getMD5Hash(password)));
                             break;
                         case 2:
                             System.out.println("Введите id который надо удалить");
@@ -156,12 +154,11 @@ public class Menu {
                     i = sc.nextInt();
                     switch (i) {
                         case 1:
-                            System.out.println("Введите id, role_name");
-                            int id = sc.nextInt();
+                            System.out.println("Введите  role_name");
                             sc.nextLine();
                             String roleName = sc.nextLine();
 
-                            roleR.create(new Roles((long) id, roleName));
+                            roleR.create(new Roles( roleName));
                             break;
                         case 2:
                             System.out.println("Введите id который надо удалить");
@@ -177,14 +174,12 @@ public class Menu {
                     i = sc.nextInt();
                     switch (i) {
                         case 1:
-                            System.out.println("Введите id, product_name, product_price, product_desc, type_id");
-                            int id = sc.nextInt();
-                            sc.nextLine();
+                            System.out.println("Введите product_name, product_price, product_desc, type_id");
                             String prodName = sc.nextLine();
                             String prodDesc = sc.nextLine();
                             int prodPrice = sc.nextInt();
                             Long typeId = sc.nextLong();
-                            productR.create(new Product((long) id, prodName, prodPrice, prodDesc, typeId ));
+                            productR.create(new Product( prodName, prodPrice, prodDesc, typeId ));
                             break;
                         case 2:
                             System.out.println("Введите id который надо удалить");
@@ -200,11 +195,9 @@ public class Menu {
                     i = sc.nextInt();
                     switch (i) {
                         case 1:
-                            System.out.println("Введите id, type_name");
-                            int id = sc.nextInt();
-                            sc.nextLine();
+                            System.out.println("Введите type_name");
                             String typeName = sc.nextLine();
-                            prodTypeR.create(new ProductType((long) id, typeName));
+                            prodTypeR.create(new ProductType( typeName));
                             break;
                         case 2:
                             System.out.println("Введите id который надо удалить");
@@ -220,15 +213,14 @@ public class Menu {
                     i = sc.nextInt();
                     switch (i) {
                         case 1:
-                            System.out.println("Введите id, user_id, product_id, is_Ordered, purchase_date");
-                            int id = sc.nextInt();
-                            sc.nextLine();
+                            System.out.println("Введитеuser_id, product_id, is_Ordered, purchase_date");
+
                             Long userId = sc.nextLong();
                             Long prodId = sc.nextLong();
                             int isOrdered = sc.nextInt();
                             sc.nextLine();
                             Date date = Date.valueOf(sc.nextLine());
-                           ordersR.create(new Orders((long) id, userId,  prodId, isOrdered, date));
+                           ordersR.create(new Orders( userId,  prodId, isOrdered, date));
                             break;
                         case 2:
                             System.out.println("Введите id который надо удалить");

@@ -10,6 +10,9 @@ public class ProductType {
         this.typeId = typeId;
         this.typeName = typeName;
     }
+    public ProductType( String typeName) {
+        this.typeName = typeName;
+    }
 
     public Long getTypeId() {
         return typeId;

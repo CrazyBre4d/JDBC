@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RoleRepository extends AbstractRepository<Roles> {
-    private static final String dbCommand1 = "INSERT INTO roless (id, role_name) VALUES (? ,?)";
+    private static final String dbCommand1 = "INSERT INTO roless (id, role_name) VALUES (MYSEQ.nextval ,?)";
 
     public void create(Roles entity) {
         String query = dbCommand1;
@@ -18,8 +18,8 @@ public class RoleRepository extends AbstractRepository<Roles> {
         try {
             conn = HikariCP.getDataSource().getConnection();
             stmt = conn.prepareStatement(query);
-            stmt.setLong(1,entity.getRoleId());
-            stmt.setString(2,entity.getRoleName());
+
+            stmt.setString(1,entity.getRoleName());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

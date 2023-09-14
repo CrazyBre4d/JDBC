@@ -11,6 +11,14 @@ public class Users {
     private String password;
 
     public Users(){}
+    public Users( String firstName, String lastName, Long roleId, String login, String password) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.roleId = roleId;
+        this.login = login;
+        this.password = password;
+    }
 
     public Users(Long userId, String firstName, String lastName, Long roleId, String login, String password) {
         this.userId = userId;

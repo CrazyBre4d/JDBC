@@ -13,6 +13,10 @@ public class Roles {
         this.roleName = roleName;
     }
 
+    public Roles(String roleName) {
+        this.roleName = roleName;
+    }
+
     public Long getRoleId() {
         return roleId;
     }

@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class OrdersRepository extends AbstractRepository{
 
     private static final String dbCommand1 = "INSERT INTO orders (id, user_id, product_id, is_ordered," +
-            " purchase_date) VALUES (? , ?, ?, ?, ?)";
+            " purchase_date) VALUES (MYSEQ.nextval , ?, ?, ?, ?)";
     private static final String dbCommand2 = "SELECT * FROM %s WHERE user_id = ? and is_ordered = 0,";
 
     public void create(Orders entity) {
@@ -22,11 +22,10 @@ public class OrdersRepository extends AbstractRepository{
         try {
             conn = HikariCP.getDataSource().getConnection();
             stmt = conn.prepareStatement(query);
-            stmt.setLong(1,entity.getOrderId());
-            stmt.setLong(2,entity.getUserId());
-            stmt.setLong(3,entity.getProductId());
-            stmt.setInt(4, entity.getIsOrdered());
-            stmt.setDate(5,entity.getPurchaseDate());
+            stmt.setLong(1,entity.getUserId());
+            stmt.setLong(2,entity.getProductId());
+            stmt.setInt(3, entity.getIsOrdered());
+            stmt.setDate(4,entity.getPurchaseDate());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

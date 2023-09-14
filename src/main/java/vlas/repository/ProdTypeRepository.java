@@ -8,7 +8,7 @@ import java.sql.*;
 
 public class ProdTypeRepository extends AbstractRepository{
 
-    private static final String dbCommand1 = "INSERT INTO product_type (id, type_name) VALUES (? ,?)";
+    private static final String dbCommand1 = "INSERT INTO product_type (id, type_name) VALUES (myseq.NEXTVAL ,?)";
     public void create(ProductType entity) {
         PreparedStatement stmt = null;
         Connection conn = null;
@@ -17,8 +17,7 @@ public class ProdTypeRepository extends AbstractRepository{
         try {
             conn = HikariCP.getDataSource().getConnection();
             stmt = conn.prepareStatement(query);
-            stmt.setLong(1, entity.getTypeId());
-            stmt.setString(2, entity.getTypeName());
+            stmt.setString(1, entity.getTypeName());
             stmt.executeUpdate();
 
         } catch (SQLException e) {

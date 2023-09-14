@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class ProductRepository extends AbstractRepository {
     private static final String dbCommand1 = "INSERT INTO product (id, product_name, product_price," +
-            "product_description, type_id) VALUES (? ,?, ?, ?, ?)";
+            "product_description, type_id) VALUES (MYSEQ.nextval ,?, ?, ?, ?)";
     public void create(Product entity) {
         String query = dbCommand1;
         Connection conn = null;
@@ -18,11 +18,10 @@ public class ProductRepository extends AbstractRepository {
         try {
             conn = HikariCP.getDataSource().getConnection();
             stmt = conn.prepareStatement(query);
-            stmt.setLong(1,entity.getProductId());
-            stmt.setString(2,entity.getProductName());
-            stmt.setInt(3, entity.getProductPrice());
-            stmt.setString(4, entity.getProductDescription());
-            stmt.setLong(5, entity.getTypeId());
+            stmt.setString(1,entity.getProductName());
+            stmt.setInt(2, entity.getProductPrice());
+            stmt.setString(3, entity.getProductDescription());
+            stmt.setLong(4, entity.getTypeId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -18,6 +18,13 @@ public class Product {
         this.productDescription = productDescription;
         this.typeId = typeId;
     }
+    public Product( String productName, int productPrice, String productDescription, Long typeId) {
+
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productDescription = productDescription;
+        this.typeId = typeId;
+    }
 
     public Long getProductId() {
         return productId;

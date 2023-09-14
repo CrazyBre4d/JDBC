@@ -64,7 +64,8 @@ public class ForUser {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ForUser forUser = (ForUser) o;
-        return Objects.equals(login, forUser.login) && Objects.equals(name, forUser.name) && Objects.equals(prodName, forUser.prodName) && Objects.equals(prodDesc, forUser.prodDesc) && Objects.equals(price, forUser.price);
+        return Objects.equals(login, forUser.login) && Objects.equals(name, forUser.name) && Objects.equals(prodName,
+                forUser.prodName) && Objects.equals(prodDesc, forUser.prodDesc) && Objects.equals(price, forUser.price);
     }
 
     @Override

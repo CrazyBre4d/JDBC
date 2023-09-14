@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class UsersRepository extends AbstractRepository {
     private static final String dbCommand1 = "INSERT INTO userss (id, f_name, l_name, role_id, loginn, passwordd) " +
-            "VALUES (?,?,?, ?,?,?)";
+            "VALUES (MYSEQ.nextval,?,?, ?,?,?)";
     private static final String dbCommand3 = "SELECT * FROM userss WHERE loginn = ?";
     private static final String dbCommand4 = "SELECT * FROM userss WHERE passwordd = ?";
 
@@ -23,12 +23,11 @@ public class UsersRepository extends AbstractRepository {
         try {
              conn = HikariCP.getDataSource().getConnection();
              stmt = conn.prepareStatement(query);
-             stmt.setLong(1,entity.getUserId());
-             stmt.setString(2,entity.getFirstName());
-             stmt.setString(3, entity.getLastName());
-             stmt.setLong(4, entity.getRoleId());
-             stmt.setString(5, entity.getLogin());
-             stmt.setString(6, entity.getPassword());
+             stmt.setString(1,entity.getFirstName());
+             stmt.setString(2, entity.getLastName());
+             stmt.setLong(3, entity.getRoleId());
+             stmt.setString(4, entity.getLogin());
+             stmt.setString(5, entity.getPassword());
              stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
