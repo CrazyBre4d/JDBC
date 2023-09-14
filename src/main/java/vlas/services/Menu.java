@@ -20,8 +20,6 @@ public class Menu {
     ProdTypeRepository prodTypeR = new ProdTypeRepository();
     UsersRepository usersR = new UsersRepository();
     ViewRepo viewR = new ViewRepo();
-
-
     public void start() {
         Scanner sc = new Scanner(System.in);
 
@@ -83,7 +81,7 @@ public class Menu {
 
     private void forUser() {
         while (true) {
-            System.out.println("Добро пожаловать в базу данных ОАО 'В ГОСТЯХ У ВЛАС\n" +
+            System.out.println("Добро пожаловать в базу данных ОАО 'В ГОСТЯХ У ВЛАСА'\n" +
                     "1 - Просмотр товаров \n2 - Просмотр корзины \n3 - Заказ \n4 - Назад");
             Scanner sc = new Scanner(System.in);
             int i = sc.nextInt();
@@ -96,7 +94,7 @@ public class Menu {
                     switch (i) {
                         case 1:
                                 Long productId = sc.nextLong();
-                                ordersR.create(new Orders(9L, (long) usersR.getIdFromDB(user1), productId,0,null));
+                                ordersR.create(new Orders( (long) usersR.getIdFromDB(user1), productId,0,null));
                                 break;
                         case 2: return;
                         default:
@@ -104,9 +102,18 @@ public class Menu {
                     } break;
 
                 case 2:
-                    System.out.println(viewR.getView(user1));
+                    System.out.println(viewR.getForUser(user1));
+                    System.out.println("1 - Удалить товар из корзины 2 - Назад");
+                    i = sc.nextInt();
+                    switch (i) {
+                        case 1 :
+                            int id = sc.nextInt();
+                            viewR.delete(id);
+                        case 2:
+                            return;
+                    }
+                    break;
                 case 3:
-
                     break;
                 case 4:
                      start();
@@ -233,6 +240,9 @@ public class Menu {
                 case 6:
                     start();
                     break;
+                case 7:
+                    System.out.println(viewR.getAll());
+                    return;
                 default:
                     throw new IllegalStateException("Unexpected value: " + i);
             }

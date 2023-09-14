@@ -9,27 +9,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ViewRepo extends AbstractRepository {
+    private static final String dbCommand = "UPDATE foruser SET is_ordered = 1";
 
-    private static final String dbCommand1 = "SELECT * FROM foruser WHERE loginn = ?";
-    public ForUser getView(String username) {
-        ForUser forUser = new ForUser();
-        String query = String.format(dbCommand1) ;
+
+    public void updateView(){
+        String query = dbCommand;
         Connection conn = null;
         PreparedStatement stmt = null;
-        ResultSet rs = null;
-        try {
-            conn = HikariCP.getDataSource().getConnection();
-            stmt = conn.prepareStatement(query);
-            stmt.setString(1, username);
-            rs = stmt.executeQuery();
-                if (rs.next()) {
-                    forUser = mapResultSetToEntity(rs);
-                }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }return forUser;
-        }
+    }
 
 
 
@@ -42,7 +29,7 @@ public class ViewRepo extends AbstractRepository {
     @Override
     protected ForUser mapResultSetToEntity(ResultSet rs) throws SQLException {
         ForUser forUser = new ForUser(rs.getString(1),rs.getString(2), rs.getString(3),
-                rs.getString(4), rs.getLong(5));
+                rs.getString(4), rs.getLong(5), rs.getInt(6));
         return forUser;
     }
 }

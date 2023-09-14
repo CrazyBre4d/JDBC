@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="Bigfix v2.1.2">
+    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="Bigfix v2.2.0 ( added sequences )">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/ForUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/ForUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/ProductType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/ProductType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/OrdersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/OrdersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/ProdTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ProdTypeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/UsersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/AbstractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/AbstractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/ViewRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ViewRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vlas/services/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/services/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +84,7 @@
       <workItem from="1694424568081" duration="15273000" />
       <workItem from="1694499360640" duration="20947000" />
       <workItem from="1694585906740" duration="8639000" />
-      <workItem from="1694671201373" duration="29374000" />
+      <workItem from="1694671201373" duration="32231000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1693914931746</created>
@@ -225,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694702009567</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Bigfix v2.2.0 ( added sequences )">
+      <created>1694703795077</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1694703795077</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +251,8 @@
     <MESSAGE value="minifix v2.0.2" />
     <MESSAGE value="minifix v2.1.2" />
     <MESSAGE value="Bigfix v2.1.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bigfix v2.1.2" />
+    <MESSAGE value="Bigfix v2.2.0 ( added sequences )" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bigfix v2.2.0 ( added sequences )" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -261,8 +263,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/vlas/services/Menu.java</url>
-          <line>98</line>
-          <option name="timeStamp" value="9" />
+          <line>110</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

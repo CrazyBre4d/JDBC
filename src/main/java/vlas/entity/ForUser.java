@@ -8,15 +8,25 @@ public class ForUser {
    private String prodName;
    private String prodDesc;
    private Long price;
+   private int isOrdered;
     public ForUser(){}
 
 
-    public ForUser(String login, String name, String prodName, String prodDesc, Long price) {
+    public ForUser(String login, String name, String prodName, String prodDesc, Long price, int isOrdered) {
         this.login = login;
         this.name = name;
         this.prodName = prodName;
         this.prodDesc = prodDesc;
         this.price = price;
+        this.isOrdered = isOrdered;
+    }
+
+    public int getIsOrdered() {
+        return isOrdered;
+    }
+
+    public void setIsOrdered(int isOrdered) {
+        this.isOrdered = isOrdered;
     }
 
     public String getLogin() {
