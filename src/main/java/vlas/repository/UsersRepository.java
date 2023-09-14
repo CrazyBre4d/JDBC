@@ -2,6 +2,7 @@ package vlas.repository;
 
 import vlas.entity.Users;
 import vlas.services.HikariCP;
+import vlas.validation.Validator;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -56,7 +57,9 @@ public class UsersRepository extends AbstractRepository {
     }
     public String getUserFromDB(String password1) {
         String user = null;
-        String query =String.format(dbCommand4,password1) ;
+        String pass = Validator.getMD5Hash(password1);
+        String query =String.format(dbCommand4,pass) ;
+        System.out.println(query);
         try (Connection conn = HikariCP.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -71,13 +74,30 @@ public class UsersRepository extends AbstractRepository {
         return user;
     }
     public int getRoleFromDB(String username) {
+        int roleId = 0;
+        String query =String.format("SELECT * FROM userss WHERE loginn = '%s'",username) ;
+        try (Connection conn = HikariCP.getDataSource().getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    roleId = rs.getInt(4);
+
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return roleId;
+    }
+
+    public int getIdFromDB(String username) {
         int id = 0;
         String query =String.format("SELECT * FROM userss WHERE loginn = '%s'",username) ;
         try (Connection conn = HikariCP.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    id = rs.getInt(4);
+                    id = rs.getInt(1);
 
                 }
             }

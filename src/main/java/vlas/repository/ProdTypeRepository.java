@@ -22,6 +22,24 @@ public class ProdTypeRepository extends AbstractRepository{
             e.printStackTrace();
         }
     }
+    public String test() throws SQLException {
+     int id = 1;
+     String idd = null;
+    String query = "SELECT * FROM PRODUCT_TYPE WHERE type_id = ?";
+    Connection conn = HikariCP.getDataSource().getConnection();
+    PreparedStatement stmt = conn.prepareStatement(query) ;
+    stmt.setInt(1, id);
+    ResultSet rs = stmt.executeQuery();
+    System.out.println(rs);
+        while (rs.next()) {
+          idd = rs.getString(2);
+
+        }
+        conn.close();
+        stmt.close();
+        rs.close();
+        return idd;
+    }
     public void delete(int id) {
         String query = String.format(dbCommand2, getTableName(), id);
         try (Connection conn = HikariCP.getDataSource().getConnection();

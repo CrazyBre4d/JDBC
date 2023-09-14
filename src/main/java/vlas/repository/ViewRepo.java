@@ -12,6 +12,7 @@ public class ViewRepo extends AbstractRepository {
 
     public void getView(String username) {
         String query =String.format("SELECT * FROM foruser WHERE f_name = '%s'",username) ;
+        System.out.println(query);
         try (Connection conn = HikariCP.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             try (ResultSet rs = stmt.executeQuery()) {

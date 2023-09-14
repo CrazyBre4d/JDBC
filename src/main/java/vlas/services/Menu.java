@@ -79,20 +79,39 @@ public class Menu {
                     break;
             }
         }
-    }
+    }//join
 
     private void forUser() {
         while (true) {
             System.out.println("Добро пожаловать в базу данных ОАО 'В ГОСТЯХ У ВЛАС\n" +
-                    "1 - Просмотр заказа\n2 - Назад");
+                    "1 - Просмотр товаров \n2 - Просмотр корзины \n3 - Заказ \n4 - Назад");
             Scanner sc = new Scanner(System.in);
             int i = sc.nextInt();
             switch (i) {
                 case 1:
-                    viewR.getView(usersR.getUserFromDB(password1)); // FIX
-                    break;
+                    System.out.println(productR.getAll());
+                    System.out.println("1 - Добавить товар в корзину \n2 - Назад");
+                    i = sc.nextInt();
+
+                    switch (i) {
+                        case 1:
+                                Long productId = sc.nextLong();
+                                ordersR.create(new Orders(7L, (long) usersR.getIdFromDB(user1), productId,0,null));
+                                break;
+                        case 2: return;
+                        default:
+                            throw new IllegalStateException("Unexpected value: " + i);
+                    } break;
+
                 case 2:
+                case 3:
+                   // System.out.println(viewR.getView(usersR.getUserFromDB(password1)));
+                    break;
+                case 4:
                      start();
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + i);
             }
         }
     }
@@ -219,6 +238,9 @@ public class Menu {
                     break;
                 case 6:
                     start();
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + i);
             }
         }
     }

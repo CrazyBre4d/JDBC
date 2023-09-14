@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class OrdersRepository extends AbstractRepository{
 
     private static final String dbCommand1 = "INSERT INTO orders (order_id, user_id, product_id, is_ordered," +
-            " purchase_date) VALUES (%d , %d, %d, %d, '%s')";
+            " purchase_date) VALUES (%d , %d, %d, %d, %t)";
     private static final String dbCommand2 = "DELETE FROM %s WHERE order_id = %d";
     public void create(Orders entity) {
         String query = String.format(dbCommand1, entity.getOrderId(), entity.getUserId(),
@@ -30,10 +30,12 @@ public class OrdersRepository extends AbstractRepository{
         try (Connection conn = HikariCP.getDataSource().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.executeUpdate();
+            System.out.println("Удален");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 
     @Override
     protected String getTableName() {
