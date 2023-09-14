@@ -79,7 +79,7 @@ public class Menu {
                     break;
             }
         }
-    }//join
+    }
 
     private void forUser() {
         while (true) {
@@ -96,7 +96,7 @@ public class Menu {
                     switch (i) {
                         case 1:
                                 Long productId = sc.nextLong();
-                                ordersR.create(new Orders(7L, (long) usersR.getIdFromDB(user1), productId,0,null));
+                                ordersR.create(new Orders(9L, (long) usersR.getIdFromDB(user1), productId,0,null));
                                 break;
                         case 2: return;
                         default:
@@ -104,8 +104,9 @@ public class Menu {
                     } break;
 
                 case 2:
+                    System.out.println(viewR.getView(user1));
                 case 3:
-                   // System.out.println(viewR.getView(usersR.getUserFromDB(password1)));
+
                     break;
                 case 4:
                      start();
@@ -135,6 +136,7 @@ public class Menu {
                             String firstName = sc.nextLine();
                             String lastName = sc.nextLine();
                             Long role = sc.nextLong();
+                            sc.nextLine();
                             String user = sc.nextLine();
                             String password = sc.nextLine();
 

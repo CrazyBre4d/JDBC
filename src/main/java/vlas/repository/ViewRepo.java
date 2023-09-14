@@ -10,20 +10,29 @@ import java.sql.SQLException;
 
 public class ViewRepo extends AbstractRepository {
 
-    public void getView(String username) {
-        String query =String.format("SELECT * FROM foruser WHERE f_name = '%s'",username) ;
-        System.out.println(query);
-        try (Connection conn = HikariCP.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            try (ResultSet rs = stmt.executeQuery()) {
+    private static final String dbCommand1 = "SELECT * FROM foruser WHERE loginn = ?";
+    public ForUser getView(String username) {
+        ForUser forUser = new ForUser();
+        String query = String.format(dbCommand1) ;
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            conn = HikariCP.getDataSource().getConnection();
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, username);
+            rs = stmt.executeQuery();
                 if (rs.next()) {
-                    System.out.println(mapResultSetToEntity(rs));
+                    forUser = mapResultSetToEntity(rs);
                 }
-            }
+
         } catch (SQLException e) {
             e.printStackTrace();
+        }return forUser;
         }
-    }
+
+
+
 
     @Override
     protected String getTableName() {
@@ -32,8 +41,8 @@ public class ViewRepo extends AbstractRepository {
 
     @Override
     protected ForUser mapResultSetToEntity(ResultSet rs) throws SQLException {
-        ForUser forUser = new ForUser(rs.getString(1), rs.getString(2),
-              rs.getLong(3));
+        ForUser forUser = new ForUser(rs.getString(1),rs.getString(2), rs.getString(3),
+                rs.getString(4), rs.getLong(5));
         return forUser;
     }
 }

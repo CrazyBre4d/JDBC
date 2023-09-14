@@ -1,54 +1,43 @@
 package vlas.repository;
 
+import oracle.jdbc.proxy.annotation.Pre;
 import vlas.entity.ProductType;
 import vlas.services.HikariCP;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class ProdTypeRepository extends AbstractRepository{
 
-    private static final String dbCommand1 = "INSERT INTO product_type (type_id, type_name) VALUES (%d ,'%s')";
-    private static final String dbCommand2 = "DELETE FROM %s WHERE type_id = %d";
+    private static final String dbCommand1 = "INSERT INTO product_type (id, type_name) VALUES (? ,?)";
     public void create(ProductType entity) {
-        String query = String.format(dbCommand1, entity.getTypeId(), entity.getTypeName());
-        System.out.println(query);
-        try (Connection conn = HikariCP.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-             stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-    public String test() throws SQLException {
-     int id = 1;
-     String idd = null;
-    String query = "SELECT * FROM PRODUCT_TYPE WHERE type_id = ?";
-    Connection conn = HikariCP.getDataSource().getConnection();
-    PreparedStatement stmt = conn.prepareStatement(query) ;
-    stmt.setInt(1, id);
-    ResultSet rs = stmt.executeQuery();
-    System.out.println(rs);
-        while (rs.next()) {
-          idd = rs.getString(2);
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        String query = dbCommand1;
 
-        }
-        conn.close();
-        stmt.close();
-        rs.close();
-        return idd;
-    }
-    public void delete(int id) {
-        String query = String.format(dbCommand2, getTableName(), id);
-        try (Connection conn = HikariCP.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+        try {
+            conn = HikariCP.getDataSource().getConnection();
+            stmt = conn.prepareStatement(query);
+            stmt.setLong(1, entity.getTypeId());
+            stmt.setString(2, entity.getTypeName());
             stmt.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
+
+
 
     @Override
     protected String getTableName() {

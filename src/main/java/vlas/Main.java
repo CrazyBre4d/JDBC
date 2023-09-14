@@ -10,10 +10,11 @@ import java.sql.SQLException;
 * можно сделаь один поиск по двум параметрам
 * */
 public class Main {
-    public static void main(String[] args) throws SQLException {
-        ProdTypeRepository p = new ProdTypeRepository();
-        System.out.println(p.test());
+    public static void main(String[] args) {
         Menu menu = new Menu();
         menu.start();
     }
 }
+
+
+// возможно строки надо будет делать так '?'

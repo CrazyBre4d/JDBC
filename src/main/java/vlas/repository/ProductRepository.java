@@ -9,32 +9,36 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ProductRepository extends AbstractRepository {
-    private static final String dbCommand1 = "INSERT INTO product (product_id, product_name, product_price," +
-            "product_description, type_id) VALUES (%d ,'%s', %d,'%s', %d)";
-    private static final String dbCommand2 = "DELETE FROM %s WHERE product_id = %d";
-
+    private static final String dbCommand1 = "INSERT INTO product (id, product_name, product_price," +
+            "product_description, type_id) VALUES (? ,?, ?, ?, ?)";
     public void create(Product entity) {
-        String query = String.format(dbCommand1, entity.getProductId(), entity.getProductName(), entity.getProductPrice(),
-                entity.getProductDescription(), entity.getTypeId());
-        System.out.println(query);
-        try (Connection conn = HikariCP.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+        String query = dbCommand1;
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            conn = HikariCP.getDataSource().getConnection();
+            stmt = conn.prepareStatement(query);
+            stmt.setLong(1,entity.getProductId());
+            stmt.setString(2,entity.getProductName());
+            stmt.setInt(3, entity.getProductPrice());
+            stmt.setString(4, entity.getProductDescription());
+            stmt.setLong(5, entity.getTypeId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
-
-    public void delete(int id) {
-        String query = String.format(dbCommand2, getTableName(), id);
-        try (Connection conn = HikariCP.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     @Override
     protected String getTableName() {

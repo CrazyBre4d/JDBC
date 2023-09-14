@@ -9,29 +9,34 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RoleRepository extends AbstractRepository<Roles> {
-    private static final String dbCommand1 = "INSERT INTO roless (role_id, role_name) VALUES (%d ,'%s')";
-    private static final String dbCommand2 = "DELETE FROM %s WHERE role_id = %d";
+    private static final String dbCommand1 = "INSERT INTO roless (id, role_name) VALUES (? ,?)";
 
     public void create(Roles entity) {
-        String query = String.format(dbCommand1, entity.getRoleId(), entity.getRoleName());
-        System.out.println(query);
-        try (Connection conn = HikariCP.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+        String query = dbCommand1;
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            conn = HikariCP.getDataSource().getConnection();
+            stmt = conn.prepareStatement(query);
+            stmt.setLong(1,entity.getRoleId());
+            stmt.setString(2,entity.getRoleName());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public void delete(int id) {
-        String query = String.format(dbCommand2, getTableName(), id);
-        try (Connection conn = HikariCP.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     protected String getTableName() {

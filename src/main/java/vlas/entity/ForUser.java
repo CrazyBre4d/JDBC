@@ -3,15 +3,36 @@ package vlas.entity;
 import java.util.Objects;
 
 public class ForUser {
+   private String login;
    private String name;
    private String prodName;
+   private String prodDesc;
    private Long price;
     public ForUser(){}
 
-    public ForUser(String name, String prodName, Long price) {
+
+    public ForUser(String login, String name, String prodName, String prodDesc, Long price) {
+        this.login = login;
         this.name = name;
         this.prodName = prodName;
+        this.prodDesc = prodDesc;
         this.price = price;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getProdDesc() {
+        return prodDesc;
+    }
+
+    public void setProdDesc(String prodDesc) {
+        this.prodDesc = prodDesc;
     }
 
     public String getName() {
@@ -43,19 +64,22 @@ public class ForUser {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ForUser forUser = (ForUser) o;
-        return Objects.equals(name, forUser.name) && Objects.equals(prodName, forUser.prodName) && Objects.equals(price, forUser.price);
+        return Objects.equals(login, forUser.login) && Objects.equals(name, forUser.name) && Objects.equals(prodName, forUser.prodName) && Objects.equals(prodDesc, forUser.prodDesc) && Objects.equals(price, forUser.price);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, prodName, price);
+        return Objects.hash(login, name, prodName, prodDesc, price);
     }
 
     @Override
-    public String toString() {
+    public String
+    toString() {
         return "ForUser{" +
-                "name='" + name + '\'' +
+                "login='" + login + '\'' +
+                ", name='" + name + '\'' +
                 ", prodName='" + prodName + '\'' +
+                ", prodDesc='" + prodDesc + '\'' +
                 ", price=" + price +
                 '}';
     }

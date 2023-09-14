@@ -1,5 +1,6 @@
 package vlas.repository;
 
+import oracle.jdbc.proxy.annotation.Pre;
 import vlas.entity.*;
 import vlas.services.HikariCP;
 
@@ -10,32 +11,38 @@ import java.sql.SQLException;
 
 public class OrdersRepository extends AbstractRepository{
 
-    private static final String dbCommand1 = "INSERT INTO orders (order_id, user_id, product_id, is_ordered," +
-            " purchase_date) VALUES (%d , %d, %d, %d, %t)";
-    private static final String dbCommand2 = "DELETE FROM %s WHERE order_id = %d";
-    public void create(Orders entity) {
-        String query = String.format(dbCommand1, entity.getOrderId(), entity.getUserId(),
-                entity.getProductId(), entity.getIsOrdered(), entity.getPurchaseDate());
-        System.out.println(query);
-        try (Connection conn = HikariCP.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-    public void delete(int id) {
-        String query = String.format(dbCommand2, getTableName(), id);
-        System.out.println(query);
-        try (Connection conn = HikariCP.getDataSource().getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.executeUpdate();
-            System.out.println("Удален");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+    private static final String dbCommand1 = "INSERT INTO orders (id, user_id, product_id, is_ordered," +
+            " purchase_date) VALUES (? , ?, ?, ?, ?)";
+    private static final String dbCommand2 = "SELECT * FROM %s WHERE user_id = ? and is_ordered = 0,";
 
+    public void create(Orders entity) {
+        String query = dbCommand1;
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            conn = HikariCP.getDataSource().getConnection();
+            stmt = conn.prepareStatement(query);
+            stmt.setLong(1,entity.getOrderId());
+            stmt.setLong(2,entity.getUserId());
+            stmt.setLong(3,entity.getProductId());
+            stmt.setInt(4, entity.getIsOrdered());
+            stmt.setDate(5,entity.getPurchaseDate());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     @Override
     protected String getTableName() {
