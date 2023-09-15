@@ -31,7 +31,6 @@ public class Menu {
                     System.out.println("Введите имя и пароль:");
                     sc.nextLine();
                     user1 = sc.nextLine();
-
                     password1 = sc.nextLine();
                     sc.nextLine();
 
@@ -60,8 +59,7 @@ public class Menu {
                     break;
                 }
                 default:
-                    System.out.println("Неверная команда. Попробуйте еще раз.");
-                    break;
+                    throw new IllegalStateException("Unexpected value");
             }
         }
     }
@@ -75,10 +73,11 @@ public class Menu {
                 case 2:
                     forUser();
                     break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + i);
             }
         }
     }
-
     private void forUser() {
         while (true) {
             System.out.println("Добро пожаловать в базу данных ОАО 'В ГОСТЯХ У ВЛАСА'\n" +
@@ -90,7 +89,6 @@ public class Menu {
                     System.out.println(productR.getAll());
                     System.out.println("1 - Добавить товар в корзину \n2 - Назад");
                     i = sc.nextInt();
-
                     switch (i) {
                         case 1:
                                 Long productId = sc.nextLong();
@@ -108,13 +106,16 @@ public class Menu {
                     switch (i) {
                         case 1 :
                             int id = sc.nextInt();
-                            viewR.delete(id);
+                            ordersR.delete1(id);
                         case 2:
                             return;
+                        default: throw new IllegalStateException("Unexpected value: " + i);
                     }
-                    break;
+
                 case 3:
-                    break;
+                    ordersR.setDate((long) usersR.getIdFromDB(user1));
+                    ordersR.updateView(usersR.getIdFromDB(user1));
+                    return;
                 case 4:
                      start();
                     break;
@@ -153,6 +154,7 @@ public class Menu {
                             usersR.delete(d);
                             break;
                         case 3:  return;
+                        default: throw new IllegalStateException("Unexpected value: " + i);
                     }
                     break;
                 case 2:
@@ -173,6 +175,7 @@ public class Menu {
                             roleR.delete(d);
                             break;
                         case 3:  return;
+                        default: throw new IllegalStateException("Unexpected value: " + i);
                     }
                     break;
                 case 3:
@@ -194,6 +197,7 @@ public class Menu {
                             productR.delete(d);
                             break;
                         case 3:  return;
+                        default: throw new IllegalStateException("Unexpected value: " + i);
                     }
                     break;
                 case 4:
@@ -212,6 +216,7 @@ public class Menu {
                             prodTypeR.delete(d);
                             break;
                         case 3:  return;
+                        default: throw new IllegalStateException("Unexpected value: " + i);
                     }
                     break;
                 case 5:
@@ -220,8 +225,7 @@ public class Menu {
                     i = sc.nextInt();
                     switch (i) {
                         case 1:
-                            System.out.println("Введитеuser_id, product_id, is_Ordered, purchase_date");
-
+                            System.out.println("Введите user_id, product_id, is_Ordered, purchase_date");
                             Long userId = sc.nextLong();
                             Long prodId = sc.nextLong();
                             int isOrdered = sc.nextInt();
@@ -232,9 +236,10 @@ public class Menu {
                         case 2:
                             System.out.println("Введите id который надо удалить");
                             int d = sc.nextInt();
-                            ordersR.delete(d);
+                            ordersR.delete1(d);
                             break;
                         case 3:  return;
+                        default: throw new IllegalStateException("Unexpected value: " + i);
                     }
                     break;
                 case 6:
