@@ -1,9 +1,8 @@
 package vlas.repository;
 
-import oracle.jdbc.proxy.annotation.Pre;
 import vlas.entity.Users;
 import vlas.services.HikariCP;
-import vlas.validation.Validator;
+import vlas.validation.PasswordValidator;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -81,7 +80,7 @@ public class UsersRepository extends AbstractRepository {
     }
     public String getUserFromDB(String password1) {
         String user = null;
-        String pass = Validator.getMD5Hash(password1);
+        String pass = PasswordValidator.getMD5Hash(password1);
         String query = dbCommand4 ;
         Connection conn = null;
         PreparedStatement stmt = null;

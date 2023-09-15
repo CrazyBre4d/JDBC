@@ -5,8 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class Validator {
-
+public class PasswordValidator {
         public static String getMD5Hash(String input) {
             try {
                 MessageDigest md = MessageDigest.getInstance("MD5");
@@ -18,7 +17,6 @@ public class Validator {
                 throw new RuntimeException("MD5 должен быть поддержан вашей Java Virtual Machine.", e);
             }
         }
-
     }
 
 

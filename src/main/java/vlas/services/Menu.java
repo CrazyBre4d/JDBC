@@ -2,8 +2,10 @@ package vlas.services;
 
 import vlas.entity.*;
 import vlas.repository.*;
-import vlas.validation.Validator;
+import vlas.validation.LoginValidator;
+import vlas.validation.PasswordValidator;
 
+import java.io.InvalidObjectException;
 import java.sql.Date;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -34,7 +36,7 @@ public class Menu {
                     password1 = sc.nextLine();
                     sc.nextLine();
 
-                    if (Validator.getMD5Hash(password1).equals(usersR.getPasswordFromDB(user1))) {
+                    if (PasswordValidator.getMD5Hash(password1).equals(usersR.getPasswordFromDB(user1))) {
                         System.out.println("входи");
                         int a = usersR.getRoleFromDB(user1);
                         next(a);
@@ -44,8 +46,6 @@ public class Menu {
                     break;
                 }
                 case 2: {
-                    System.out.println("Введите место в таблице:");
-                    int id = sc.nextInt();
                     sc.nextLine();
                     System.out.println("Введите имя");
                     String firstName = sc.nextLine();
@@ -55,7 +55,10 @@ public class Menu {
                     String user = sc.nextLine();
                     System.out.println("Введите пароль");
                     String password = sc.nextLine();
-                    usersR.create(new Users((long) id, firstName, lastName, roleUser, user, Validator.getMD5Hash(password)));
+                    if( (user).equals(LoginValidator.check(user)) ) {
+                        throw new RuntimeException();
+                    }
+                    usersR.create(new Users( firstName, lastName, roleUser, user, PasswordValidator.getMD5Hash(password)));
                     break;
                 }
                 default:
@@ -125,7 +128,7 @@ public class Menu {
         }
     }
 
-    private void forAdmin() {
+    private void forAdmin()  {
         while (true) {
             System.out.println("Салам, Женя! \n Выберите таблицу или действие:\n" +
                     "1 - Users  \n2 - Roles \n3 - Product \n4 - Product_type \n5 - Orders \n6 - Назад");
@@ -146,7 +149,7 @@ public class Menu {
                             String user = sc.nextLine();
                             String password = sc.nextLine();
 
-                            usersR.create(new Users( firstName, lastName, role, user, Validator.getMD5Hash(password)));
+                            usersR.create(new Users( firstName, lastName, role, user, PasswordValidator.getMD5Hash(password)));
                             break;
                         case 2:
                             System.out.println("Введите id который надо удалить");

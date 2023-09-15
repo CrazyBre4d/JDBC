@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="Bigfix v2.2.1 ( added param for ViewRepo )">
+    <list default="true" id="6162ccbe-b516-4e61-9785-f49e78b8f0ff" name="Changes" comment="Release BETA 1 (all works good )">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vlas/validation/LoginValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vlas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/ForUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/ForUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/OrdersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/OrdersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/ViewRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/ViewRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/repository/UsersRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vlas/services/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/services/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vlas/validation/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vlas/validation/PasswordValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,7 @@
       <workItem from="1694499360640" duration="20947000" />
       <workItem from="1694585906740" duration="8639000" />
       <workItem from="1694671201373" duration="32441000" />
-      <workItem from="1694757941066" duration="16002000" />
+      <workItem from="1694757941066" duration="18676000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1693914931746</created>
@@ -235,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694706707389</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Release BETA 1 (all works good )">
+      <created>1694781017840</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1694781017840</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +268,8 @@
     <MESSAGE value="Bigfix v2.1.2" />
     <MESSAGE value="Bigfix v2.2.0 ( added sequences )" />
     <MESSAGE value="Bigfix v2.2.1 ( added param for ViewRepo )" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bigfix v2.2.1 ( added param for ViewRepo )" />
+    <MESSAGE value="Release BETA 1 (all works good )" />
+    <option name="LAST_COMMIT_MESSAGE" value="Release BETA 1 (all works good )" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
